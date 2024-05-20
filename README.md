@@ -22,9 +22,7 @@ bundle install
 Once this has been completed you can created the SQLite3 database by running
 
 ```
-bin/rails db:create
-bin/rails db:migrate
-bin/rails db:seed
+bin/rails db:setup
 ```
 
 Once you have set up your database start the server by running
