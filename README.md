@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Thank you for taking the time to attempt the Kubicle take home assignment. To help you get up and running quickly we have provided a basic backend application which you can expand as part of the assignment. 
+Thank you for taking the time to attempt the Kubicle take home assignment. To help you get up and running quickly we have provided a basic backend application which you can expand as part of the assignment.
 
 This is the **Ruby on Rails** version of backend.
 
