@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_19_064212) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_27_171927) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "course_logs", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.integer "user_id", default: 1
+    t.integer "state", default: 0
+    t.integer "kind", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_course_logs_on_course_id"
+  end
+
+  create_table "course_logs_videos", force: :cascade do |t|
+    t.bigint "course_log_id", null: false
+    t.integer "time_elapsed_in_seconds"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_log_id"], name: "index_course_logs_videos_on_course_log_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
@@ -23,4 +41,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_19_064212) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "course_logs", "courses"
+  add_foreign_key "course_logs_videos", "course_logs"
 end

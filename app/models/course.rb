@@ -13,4 +13,7 @@
 #  updated_at    :datetime         not null
 #
 class Course < ApplicationRecord
+  has_many :course_logs
+
+  validates :title, presence: true
 end
